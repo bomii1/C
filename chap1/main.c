@@ -15,7 +15,7 @@ int main() {
     if (option == 1) { result = a + b; printf("a + b = %d",result); }
     else if (option == 2) { result = a - b; printf("a - b = %d",result); }
     else if (option == 3) { result = a * b; printf("a * b = %d",result); }
-    else if (option == 4) { result = a % b; printf("a / b = %d",result); }
+    else if (option == 4) { result = a / b; printf("a / b = %d",result); }
 
     return 0;
 }
