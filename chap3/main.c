@@ -2,16 +2,14 @@
 
 int main() {
 
-    char str[10];
+    int a = 0x41, b = 0x61;
+    printf("%c",a);
+    printf("%c",b);
+    int tol = b - a;
 
-    printf("문자열을 입력 ==>");
-    scanf("%s", str);
-    printf("%s\n", str);
+    printf("%c를 소문자로 표시하면 %c이며\n", 'K','K'+tol);
+    printf("%c를 대문자로 표시하면 %c이며\n", 'z', 'z'-tol);
 
-    for (int i=sizeof(str)-1; i>=0; i--) {
-        if (str[i] == NULL) { continue; }
-        printf("%c",str[i]);
-    }
 
 
     return 0;
