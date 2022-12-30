@@ -2,7 +2,7 @@
 
 int main() {
 
-    int money, num;
+    int money;
 
     printf("## 교환할 돈은? ");
     scanf("%d", &money);
