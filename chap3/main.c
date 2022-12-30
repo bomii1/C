@@ -2,21 +2,15 @@
 
 int main() {
 
-    int money;
+    int year;
+    printf("년도를 입력하세요: ");
+    scanf("%d", &year);
 
-    printf("## 교환할 돈은? ");
-    scanf("%d", &money);
-
-    printf("오백원짜리 ==> %d\n", money / 500);
-    int charge = money % 500;
-    printf("백원짜리 ==> %d\n", charge / 100);
-    charge %= 100;
-    printf("오십원짜리 ==> %d\n", charge / 50);
-    charge %= 50;
-    printf("십원짜리 ==> %d\n", charge / 10);
-    charge %= 10;
-    printf("바꾸지 못한 잔돈 ==> %d", charge);
-
+    if (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0)) {
+        printf("%d년은 윤년입니다", year);
+    } else {
+        printf("%d년은 윤년이 아닙니다", year);
+    }
 
     return 0;
 }
