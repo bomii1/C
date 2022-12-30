@@ -2,14 +2,18 @@
 
 int main() {
 
-    int a = 0x41, b = 0x61;
-    printf("%c",a);
-    printf("%c",b);
-    int tol = b - a;
+    float firstNum, secondNum;
 
-    printf("%c를 소문자로 표시하면 %c이며\n", 'K','K'+tol);
-    printf("%c를 대문자로 표시하면 %c이며\n", 'z', 'z'-tol);
+    printf("첫 번째 계산할 값 ==> ");
+    scanf("%f", &firstNum);
+    printf("두 번째 계산할 값 ==> ");
+    scanf("%f", &secondNum);
 
+    printf("%5.2f + %5.2f = %5.2f\n", firstNum, secondNum, firstNum + secondNum);
+    printf("%5.2f - %5.2f = %5.2f\n", firstNum, secondNum, firstNum - secondNum);
+    printf("%5.2f * %5.2f = %5.2f\n", firstNum, secondNum, firstNum * secondNum);
+    printf("%5.2f / %5.2f = %5.2f\n", firstNum, secondNum, firstNum / secondNum);
+    printf("%d %% %d = %d\n", (int)firstNum, (int)secondNum, (int)firstNum % (int)secondNum);
 
 
     return 0;
