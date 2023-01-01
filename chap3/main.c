@@ -2,15 +2,16 @@
 
 int main() {
 
-    int year;
-    printf("년도를 입력하세요:");
-    scanf("%d", &year);
+    int sec;
+    printf("계산할 초는? ");
+    scanf("%d", &sec);
 
-    if (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0)) {
-        printf("%d년은 윤년입니다", year);
-    } else {
-        printf("%d년은 윤년이 아닙니다", year);
-    }
+    int hour = sec / 3600;
+    int min = (sec % 3600) / 60;
+    sec = ((sec % 3600) % 60);
+    printf("시간은? %d시간\n", hour);
+    printf("분은? %d분\n", min);
+    printf("초는? %d초\n", sec);
 
     return 0;
 }
