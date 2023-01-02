@@ -3,15 +3,14 @@
 
 int main() {
 
-    char str[100];
+    int result = 0;
 
-    printf("영문자 및 숫자 입력 ==> ");
-    scanf("%s", str);
-
-    for (int i=strlen(str)-1; i>=0; i--) {
-        printf("%c", str[i]);
+    for (int i=1; i<=1000; i++) {
+        if (i % 3 == 0 || i % 7 == 0) {
+            result += i;
+        }
     }
-
+    printf("%d", result);
 
     return 0;
 }
