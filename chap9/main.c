@@ -3,37 +3,42 @@
 
 int main() {
 
-    int arr[10];
-    int *p;
-    p = arr;
+    char stack[5];
+    int top = 0;
+    int select;
+    char car = 'A';
 
-    int size = sizeof(arr)/sizeof(int);
-    for (int i=0; i<size; i++) {
-        printf("arr[%d] 데이터: ", i);
-        scanf("%d", p+i);
-    }
+    do {
+        printf("<1> 자동차 넣기 <2> 자동차 빼기 <3> 끝내기 ==> ");
+        scanf("%d", &select);
 
-    printf("정렬 전 배열 => ");
-    for (int i=0; i<size; i++) {
-        printf("%2d", *(p+i));
-    }
-    printf("\n");
+        switch (select) {
+            case 1:
+                if (top >= 5) {
+                    printf("더 이상 차가 들어갈 수 없습니다\n");
+                } else {
+                    top++;
+                    printf("%c 차가 %d 층에 들어왔습니다\n", car, top);
+                    car++;
+                }
+                break;
+            case 2:
+                if (top <= 0) {
+                    printf("더 이상 빼낼 차가 없습니다\n");
+                } else {
+                    car--;
+                    printf("%d 층에 있던 %c 차가 나갔습니다\n", top, car);
+                    top--;
+                }
+                break;
+            case 3:
+                break;
+            default:
+                printf("잘못된 입력입니다\n");
+        }
 
-    printf("정렬 후 배열 => ");
+    } while (select != 3);
 
-    for (int i=0; i<size; i++) {
-          for (int k=i+1; k<size; k++) {
-              if (*(p+i) > *(p+k)) {
-                  int tmp = *(p+i);
-                  *(p+i) = *(p+k);
-                  *(p+k) = tmp;
-              }
-          }
-    }
-
-    for (int i=0; i<size; i++) {
-        printf("%2d", *(p+i));
-    }
 
     return 0;
 }
