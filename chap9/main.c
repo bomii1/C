@@ -3,22 +3,31 @@
 
 int main() {
 
-    int a,b;
-    int *p1,*p2;
+    int arr[10] = {1,0,3,2,5,4,7,6,9,8};
+    int *p;
+    p = arr;
 
-    printf("a 값 입력: ");
-    scanf("%d", &a);
-    printf("b 값 입력: ");
-    scanf("%d", &b);
+    printf("정렬 전 배열 => ");
+    for (int i=0; i<sizeof(arr)/sizeof(int); i++) {
+        printf("%2d", *(p+i));
+    }
+    printf("\n");
 
-    p1 = &a;
-    p2 = &b;
+    printf("정렬 후 배열 => ");
 
-    int tmp = *p1;
-    *p1 = *p2;
-    *p2 = tmp;
+    for (int i=0; i<sizeof(arr)/sizeof(int); i++) {
+          for (int k=i+1; k<sizeof(arr)/sizeof(int); k++) {
+              if (*(p+i) > *(p+k)) {
+                  int tmp = *(p+i);
+                  *(p+i) = *(p+k);
+                  *(p+k) = tmp;
+              }
+          }
+    }
 
-    printf("바뀐 값 a 는 %d, b 는 %d", *p1, *p2);
+    for (int i=0; i<sizeof(arr)/sizeof(int); i++) {
+        printf("%2d", *(p+i));
+    }
 
     return 0;
 }
