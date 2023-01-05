@@ -3,23 +3,23 @@
 
 int main() {
 
-    char str[50];
-    char ch1, ch2;
+    int aa[3][4];
+    int val = 1;
 
-    printf("글자 입력: ");
-    gets(str);
-    printf("기존의 문자와 새로운 문자: ");
-    scanf("%c %c", &ch1, &ch2);
-    printf("변환된 결과: ");
-
-    for (int i=0; i<strlen(str); i++) {
-        if (str[i] == ch1) {
-            str[i] = ch2;
-            printf("%c", str[i]);
-        } else {
-            printf("%c", str[i]);
+    int i = 0;
+    while (i < 3) {
+        int k = 0;
+        while (k < 4) {
+            aa[i][k] = val;
+            val++;
+            printf("aa[%d][%d] ==> %d\t", i, k, aa[i][k]);
+            k++;
         }
+        i++;
+        printf("\n");
     }
+
+
 
     return 0;
 }
