@@ -4,16 +4,21 @@
 int main() {
 
     char str[100];
-    char strCopy[100];
+    int convert = 'a' - 'A';
 
-    printf("문자열을 입력하세요: ");
-    scanf("%s", str);
-    printf("내용을 거꾸로 출력: ");
-    for (int i=0; i<strlen(str); i++) {
-        strCopy[i] = str[strlen(str)-i-1];
+    printf("문자 입력: ");
+    gets(str);
+    printf("%변환된 문자: ");
+    for (int i=0; i<strlen(str)-1; i++) {
+        if (str[i] >= 'A' && str[i] <= 'Z') {
+            printf("%c", str[i] + convert); // 소문자 변환
+        } else if (str[i] >= 'a' && str[i] <= 'z') {
+            printf("%c", str[i] - convert); // 대문자 변환
+        } else {
+            printf("%c", str[i]);
+        }
     }
-    strCopy[strlen(str)+1] = '\0';
-    printf("%s",strCopy);
+
 
 
     return 0;
