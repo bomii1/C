@@ -3,16 +3,22 @@
 
 int main() {
 
-    char str[50];
-    char *p;
-    p = str;
-    printf("문자열을 입력하세요: ");
-    gets(str);
-    printf("내용을 거꾸로 출력 ==> ");
+    int a,b;
+    int *p1,*p2;
 
-    for (int i=strlen(str)-1; i>=0; i--) {
-        printf("%c", *(p+i));
-    }
+    printf("a 값 입력: ");
+    scanf("%d", &a);
+    printf("b 값 입력: ");
+    scanf("%d", &b);
+
+    p1 = &a;
+    p2 = &b;
+
+    int tmp = *p1;
+    *p1 = *p2;
+    *p2 = tmp;
+
+    printf("바뀐 값 a 는 %d, b 는 %d", *p1, *p2);
 
     return 0;
 }
