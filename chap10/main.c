@@ -15,13 +15,12 @@ void conversion(char ch) {
 
 int main() {
 
-    char str[50];
-    printf("문자열 입력: ");
-    gets(str);
+    char x, y;
 
-    for (int i=0; i<strlen(str); i++) {
-        conversion(str[i]);
-    }
+    printf("두 문자를 입력: ");
+    scanf("%c %c", &x, &y);
+    int diff = x - y;
+    printf("두 문자의 차이 ==> %d", diff);
 
     return 0;
 }
