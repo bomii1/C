@@ -3,22 +3,15 @@
 
 int main() {
 
-    char str[100];
-    int convert = 'a' - 'A';
+    int gugudan[8][9];
 
-    printf("문자 입력: ");
-    gets(str);
-    printf("%변환된 문자: ");
-    for (int i=0; i<strlen(str)-1; i++) {
-        if (str[i] >= 'A' && str[i] <= 'Z') {
-            printf("%c", str[i] + convert); // 소문자 변환
-        } else if (str[i] >= 'a' && str[i] <= 'z') {
-            printf("%c", str[i] - convert); // 대문자 변환
-        } else {
-            printf("%c", str[i]);
+    for (int i=1; i<=9; i++) {
+        for (int k=2; k<=9; k++) {
+            gugudan[i][k] = i * k;
+            printf("%d x %2d = %2d  ", k, i, gugudan[i][k]);
         }
+        printf("%\n");
     }
-
 
 
     return 0;
