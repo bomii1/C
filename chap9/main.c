@@ -17,7 +17,7 @@ int main() {
 
     for (int i=0; i<sizeof(arr)/sizeof(int); i++) {
           for (int k=i+1; k<sizeof(arr)/sizeof(int); k++) {
-              if (*(p+i) > *(p+k)) {
+              if (*(p+i) < *(p+k)) {
                   int tmp = *(p+i);
                   *(p+i) = *(p+k);
                   *(p+k) = tmp;
