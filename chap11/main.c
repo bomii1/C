@@ -2,16 +2,21 @@
 
 int main() {
 
-    char s[20];
+    char s[200];
     FILE *wfp;
+    FILE *rfp;
 
-    wfp = fopen("C:\\Users\\buij3\\OneDrive\\바탕 화면\\testC.txt", "w");
+    rfp = fopen("C:\\Users\\buij3\\OneDrive\\바탕 화면\\testC.txt", "r");
+    wfp = fopen("C:\\Users\\buij3\\OneDrive\\바탕 화면\\testC2.txt", "w");
 
-    printf("문자열 입력: ");
-    gets(s);
+    for (; ;) {
+        fgets(s, 200, rfp);
+        if (feof(rfp))
+            break;
+        fputs(s, wfp);
+    }
 
-    fputs(s, wfp);
-
+    fclose(rfp);
     fclose(wfp);
 
     return 0;
