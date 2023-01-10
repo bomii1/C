@@ -17,8 +17,6 @@ int main() {
     }
     fclose(rfp);
 
-    fclose(rfp);
-
     return 0;
 }
 
