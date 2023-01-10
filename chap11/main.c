@@ -2,19 +2,17 @@
 
 int main() {
 
-    FILE *rfp;
-    int hap = 0;
-    int in;
+    char s[20];
+    FILE *wfp;
 
-    rfp = fopen("C:\\Users\\buij3\\OneDrive\\바탕 화면\\testC.txt", "r");
+    wfp = fopen("C:\\Users\\buij3\\OneDrive\\바탕 화면\\testC.txt", "w");
 
-    for (int i=0; i<5; i++) {
-        fscanf(rfp, "%d", &in);
-        hap += in;
-    }
-    printf("합계 ==> %d\n", hap);
+    printf("문자열 입력: ");
+    gets(s);
 
-    fclose(rfp);
+    fputs(s, wfp);
+
+    fclose(wfp);
 
     return 0;
 }
